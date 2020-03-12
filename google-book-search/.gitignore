@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+APIKEY=AIzaSyB1-g38wEt_Oropb69u87KvY740kGkMiCc
 # dependencies
 /node_modules
 /.pnp
