@@ -24,6 +24,7 @@ function App() {
 
     axios.get("https://www.googleapis.com/books/v1/volumes?q=avengers" + book + "&key=" + apiKey + "&maxResults=35")
       .then(data => {
+        console.log(data.data.items)
         setResult(data.data.items);
       })
 
@@ -31,10 +32,10 @@ function App() {
 
 
   return (
-    <div class="container">
+    <div className="container">
       <h1> Search for books!</h1>
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
+        <div className="form-group">
           <input type="text" onChange={handleChange}
             className="form-control"
             placeholder=" search for books"
@@ -45,10 +46,11 @@ function App() {
 
 
       {result.map(book => (
-        <a target="_blank" href={book.volumeInfo.previewLink} >
-          <img src={book.volumeInfo.imageLinks.thumbnail}
-            alt="{book.title}" />
+        <a target="_blank" href={book.volumeInfo.previewLink || ''} >
+          <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : ''}
+            alt={book.title} />
         </a>
+
       ))}
 
 
