@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-require('dotenv').config();
+require('dotenv').config()
 
 
-const APIKEY = process.env.APIKEY;
+const APIKEY = process.env.REACT_APP_APIKEY;
+
 
 
 function Home() {
@@ -35,6 +36,9 @@ function Home() {
     }
 
     function handleCart(event) {
+
+
+
 
 
 
