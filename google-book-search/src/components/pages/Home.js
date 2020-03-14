@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+require('dotenv').config();
 
 
-const APIKEY = "AIzaSyB1-g38wEt_Oropb69u87KvY740kGkMiCc";
+const APIKEY = process.env.APIKEY;
 
 
 function Home() {
@@ -65,7 +66,7 @@ function Home() {
                         <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : ''}
                             alt={book.title} />
 
-    
+
 
 
 
